@@ -1,0 +1,17 @@
+producers:
+  server1: a
+#    bootstrap: localhost:9092
+#    group-id: test-group
+#    topics:
+#      topic-one:
+#        name: AAA
+#        key: String
+#        value: Integer
+#  server-two:
+#    bootstrap: localhost:9093
+#    group-id: test-group2
+#    topics:
+#      topic:
+#        name: AAA
+#        key: good
+#        value: 123
