@@ -4,14 +4,20 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 
-import java.util.function.Consumer;
-
 @SpringBootApplication
 public class KafkaApplication {
 
     public static void main(String[] args) {
         ApplicationContext context = SpringApplication.run(KafkaApplication.class, args);
         KafkaService kafkaTest = context.getBean(KafkaService.class);
+        String a = "asdf" + System.lineSeparator();
+        StringBuilder st = new StringBuilder();
+        st.replace(
+                st.lastIndexOf("\r\n") == -1
+                        ? st.lastIndexOf("\n")
+                        : st.lastIndexOf("\r\n"),
+                st.length(),
+                "asdf");
 //        List<String> kafkaConfig = (List<String>) context.getBean("producers");
 //        System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!");
 //        System.out.println(kafkaConfig.get(0));
