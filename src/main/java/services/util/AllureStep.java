@@ -186,7 +186,7 @@ public class AllureStep {
             }
             case "проверка", "подготовка" -> Allure.getLifecycle().startStep(
                     uuidStep,
-                    GeneratorValue.generatorId(),
+                    GeneratorValue.generateId(),
                     new StepResult()
                             .setName(name)
                             .setParameters(createParam(param))
