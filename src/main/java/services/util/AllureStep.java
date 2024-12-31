@@ -14,6 +14,8 @@ import java.util.concurrent.atomic.AtomicReference;
 import java.util.function.Supplier;
 import java.util.stream.Collectors;
 
+import static services.util.HelperJson.*;
+
 /**
  * AllureSteps<br/> Утилитарный класс для формирования отчета в Allure и параметризации теста
  */
@@ -308,12 +310,12 @@ public class AllureStep {
                 <body>
                 <pre>
                 """);
-        String[] arrayExpected = converterViewJson(expected != null
-                ? converterStringToJsonNode(convertObjectToJson(actual)).toString()
+        String[] arrayExpected = convertViewJson(expected != null
+                ? convertStringToJsonNode(convertObjectToJson(actual)).toString()
                 : "{null}"
         ).split("\n");
-        String[] arrayActual = converterViewJson(actual != null
-                ? converterStringToJsonNode(convertObjectToJson(actual)).toString()
+        String[] arrayActual = convertViewJson(actual != null
+                ? convertStringToJsonNode(convertObjectToJson(actual)).toString()
                 : "{null}"
         ).split("\n");
         for (int i = 0; i < arrayActual.length; i++) {
